@@ -1,0 +1,954 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://azurecommunity.pl/feed.xml" rel="self" type="application/atom+xml" /><link href="https://azurecommunity.pl/" rel="alternate" type="text/html" /><updated>2021-01-04T09:49:39+01:00</updated><id>https://azurecommunity.pl/feed.xml</id><title type="html">Microsoft Azure User Group Poland</title><subtitle>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+</subtitle><entry><title type="html">Wykorzystanie Azure AD w aplikacjach - część 2</title><link href="https://azurecommunity.pl/blog/azure-solutions-architect-qa-aad-part2" rel="alternate" type="text/html" title="Wykorzystanie Azure AD w aplikacjach - część 2" /><published>2020-12-10T00:00:00+01:00</published><updated>2020-12-10T00:00:00+01:00</updated><id>https://azurecommunity.pl/blog/azure-solutions-architect-qa-aad-part2</id><content type="html" xml:base="https://azurecommunity.pl/blog/azure-solutions-architect-qa-aad-part2">&lt;h1 id=&quot;azure-solutions-architect-wykorzystanie-azure-ad-w-aplikacjach---część-2&quot;&gt;#azure-solutions-architect Wykorzystanie Azure AD w aplikacjach - część 2&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://bit.ly/3loHI9n&quot;&gt;Add to calendar&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://bit.ly/36jLuwk&quot;&gt;Meeting link&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=LVDt0l-u8Y8&quot;&gt;Recording&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;agenda&quot;&gt;Agenda&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Omówienie zaproponowanego rozwiązania zadania&lt;/li&gt;
+  &lt;li&gt;Application flows - czyli jak połączyć użytkowników AAD z aplikacją hostowaną w chmurze&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;zadanie&quot;&gt;Zadanie&lt;/h2&gt;
+&lt;p&gt;Połącz w bezpieczny sposób aplikację web z bazą danych (np. Cosmos DB) i pobierz informacje korzystając z tokenu użytkownika.&lt;/p&gt;
+
+&lt;p&gt;Elementy który warto wziąć pod uwagę to:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;App Service&lt;/li&gt;
+  &lt;li&gt;Cosmos DB&lt;/li&gt;
+  &lt;li&gt;Azure AD&lt;/li&gt;
+  &lt;li&gt;Private Endpoint (dla BARDZO chętnych)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;linki&quot;&gt;Linki&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-protocols&quot;&gt;OAuth 2.0 oraz OpenID Connect&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-implicit-grant-flow&quot;&gt;Implicit flow&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-auth-code-flow&quot;&gt;Authorization code flow&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow&quot;&gt;On-Behalf-Of flow&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/azure/cosmos-db/secure-access-to-data&quot;&gt;Ograniczanie dostępu do danych w CosmosDB&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/azure/app-service/app-service-authentication-how-to&quot;&gt;Autoryzacja i uwierzytelnianie w App Service&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/azure/app-service/configure-authentication-provider-aad&quot;&gt;Konfiguracja App Service w Azure AD&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>[&quot;aryll&quot;, &quot;maciejgos&quot;]</name></author><category term="Architecture Meetings" /><category term="Azure AD" /><category term="CosmosDB" /><category term="App Service" /><category term="Private endpoints" /><summary type="html">#azure-solutions-architect Wykorzystanie Azure AD w aplikacjach - część 2</summary></entry><entry><title type="html">Wykorzystanie Azure AD w aplikacjach - część 1</title><link href="https://azurecommunity.pl/blog/azure-solutions-architect-qa-aad-part1" rel="alternate" type="text/html" title="Wykorzystanie Azure AD w aplikacjach - część 1" /><published>2020-11-26T00:00:00+01:00</published><updated>2020-11-26T00:00:00+01:00</updated><id>https://azurecommunity.pl/blog/azure-solutions-architect-qa-aad-part1</id><content type="html" xml:base="https://azurecommunity.pl/blog/azure-solutions-architect-qa-aad-part1">&lt;h1 id=&quot;azure-solutions-architect-wykorzystanie-azure-ad-w-aplikacjach&quot;&gt;#azure-solutions-architect Wykorzystanie Azure AD w aplikacjach&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://evt.mx/g5eQsKRs&quot;&gt;Add to calendar&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://bit.ly/3mI0gm0&quot;&gt;Meeting link&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=Wa81cuppsdg&amp;amp;feature=youtu.be&amp;amp;fbclid=IwAR1goGX_TP9rpd9LoN-U7tr7Zoap0d3A5yLy0VSRQ9tp-jmYX12pKWUzHfA&quot;&gt;Recording&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www2.slideshare.net/secret/lgU9qapOYBWwEf&quot;&gt;Prezentacja&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;agenda&quot;&gt;Agenda&lt;/h1&gt;
+&lt;ol&gt;
+  &lt;li&gt;Dyskusja o AAD i AD&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;zadanie&quot;&gt;Zadanie&lt;/h2&gt;
+&lt;p&gt;Połącz w bezpieczny sposób aplikację web z bazą danych (np. Cosmos DB) i pobierz informacje korzystając z tokenu użytkownika.&lt;/p&gt;
+
+&lt;p&gt;Elementy który warto wziąć pod uwagę to:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;App Service&lt;/li&gt;
+  &lt;li&gt;Cosmos DB&lt;/li&gt;
+  &lt;li&gt;Azure AD&lt;/li&gt;
+  &lt;li&gt;Private Endpoint (dla BARDZO chętnych)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;linki&quot;&gt;Linki&lt;/h2&gt;
+
+&lt;h3 id=&quot;ogólne-linki-architektoniczne&quot;&gt;Ogólne linki architektoniczne&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/azure/architecture/patterns/&quot;&gt;Cloud Design Patterns&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/azure/architecture/browse/&quot;&gt;Architektury Azure&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;infrastruktura--private-endpoints&quot;&gt;Infrastruktura &amp;amp; private endpoints&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=7EJtmX1Vcmc&quot;&gt;Projektowanie sieci w chmurze z perspektywy bezpieczeństwa&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;active-directory&quot;&gt;Active Directory&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=xBG076ablpg&quot;&gt;Autoryzacja vs uwierzytelnianie&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/azure/active-directory/develop/&quot;&gt;Microsoft identity platform documentation&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals#application-object&quot;&gt;Application and service principal objects in Azure Active Directory&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-app-types&quot;&gt;Application types for Microsoft identity platform&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/azure/active-directory/develop/authentication-flows-app-scenarios&quot;&gt;Authentication flows and application scenarios&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/azure/cosmos-db/managed-identity-based-authentication&quot;&gt;Use system-assigned managed identities to access Azure Cosmos DB data&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/azure/active-directory-domain-services/overview#:~:text=Azure%20Active%20Directory%20Domain%20Services%20&amp;lpar;AD%20DS&amp;rpar;%20provides%20managed%20domain,&amp;lpar;DCs&amp;rpar;%20in%20the%20cloud&quot;&gt;Azure AD DS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/azure/active-directory-domain-services/compare-identity-solutions&quot;&gt;Porównanie Azure AD DS i Self-managed AD DS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>[&quot;aryll&quot;, &quot;maciejgos&quot;]</name></author><category term="Architecture Meetings" /><category term="Azure AD" /><category term="CosmosDB" /><category term="App Service" /><category term="Private endpoints" /><summary type="html">#azure-solutions-architect Wykorzystanie Azure AD w aplikacjach</summary></entry><entry><title type="html">Zabezpieczenie komunikacji pomiedzy on-prem a Azure</title><link href="https://azurecommunity.pl/blog/azure-solutions-architect-qa-secure-network" rel="alternate" type="text/html" title="Zabezpieczenie komunikacji pomiedzy on-prem a Azure" /><published>2020-10-22T00:00:00+02:00</published><updated>2020-10-22T00:00:00+02:00</updated><id>https://azurecommunity.pl/blog/azure-solutions-architect-qa-secure-network</id><content type="html" xml:base="https://azurecommunity.pl/blog/azure-solutions-architect-qa-secure-network">&lt;h1 id=&quot;azure-solutions-architect-zabezpieczenie-komunikacji-pomiedzy-on-prem-a-azure&quot;&gt;#azure-solutions-architect zabezpieczenie komunikacji pomiedzy on-prem a Azure&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://evt.mx/nLArx0BI&quot;&gt;Add to calendar&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://teams.microsoft.com/l/meetup-join/19%3ameeting_MGYzOTZjYWYtNDliNi00NzJiLWFkNWEtYjRhMzJhMGFiMzcw%40thread.v2/0?context=%7b%22Tid%22%3a%22ef60a5a4-900c-4789-89cd-0c42f28ef541%22%2c%22Oid%22%3a%22843f36ea-2af5-4be3-a168-6b8fd3acd1b3%22%7d&quot;&gt;Meeting link&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://youtu.be/H2Wf1lo-3ts&quot;&gt;Recording&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;agenda&quot;&gt;Agenda&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Przegląd przygotowanych rozwiązań.&lt;/li&gt;
+  &lt;li&gt;Q&amp;amp;A.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;dyskusja&quot;&gt;Dyskusja&lt;/h1&gt;
+
+&lt;h2 id=&quot;przegląd-projektu-architektury&quot;&gt;Przegląd projektu architektury&lt;/h2&gt;
+
+&lt;h3 id=&quot;zadanie&quot;&gt;Zadanie&lt;/h3&gt;
+&lt;p&gt;Firma chce zabezpieczyć komunikację sieciową pomiędzy zasobami, które są hostowane na Azure oraz zasobami uruchomionymi w sieci lokalnej firmy. Cała infrastruktura powinna być dostępna tylko z sieci firmowej, oraz w ramach podsieci dla maszyn wirtualnych. W chwili obecnej podjęta została decyzja o przeniesieniu całych maszyn wirtualnych wraz z zasobami. Zaproponowane rozwiązanie powinno uwzględnić możliwość użycia różnych zasobów Azure w przyszłości.&lt;/p&gt;
+
+&lt;h3 id=&quot;wymagania&quot;&gt;Wymagania:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;dwie wersje systemu: 
+1) stosunkowo bezpieczna i tania 
+2) droższa ale bardziej zabezpieczona&lt;/li&gt;
+  &lt;li&gt;należy policzyć koszty rozwiązania (bez kosztów maszyn wirtualnych)
+istotna jest analiza wdrożenia innych usług hostowanych na Azure w przyszłości&lt;/li&gt;
+  &lt;li&gt;nakład pracy potrzebny do wdrożenia obu rozwiązań&lt;/li&gt;
+  &lt;li&gt;sposób monitorowania / zarządzania rozwiązaniami&lt;/li&gt;
+  &lt;li&gt;analiza SLA&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;poglądowy-schemat-architektury&quot;&gt;Poglądowy schemat architektury:&lt;/h3&gt;
+&lt;h4 id=&quot;private-link&quot;&gt;Private link&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;../assets/images/posts/2020-10-22/private_link.png&quot; alt=&quot;Schemat architektury - Private Link&quot; /&gt;&lt;/p&gt;
+&lt;h4 id=&quot;service-endpoints&quot;&gt;Service endpoints&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;../assets/images/posts/2020-10-22/service_endpoint.png&quot; alt=&quot;Schemat architektury - Service endpoints&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;qa&quot;&gt;Q&amp;amp;A&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;miesięczny koszt rozwiązania opartego o Private Link to ok. $9. Przy załozeniu transferu inbound/outbound na poziomie 100GB, oraz wykorzystaniu jednego “link” dla usług!!!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;linki-związane-z-tematem&quot;&gt;Linki związane z tematem&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview&quot;&gt;Service enpoints&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview&quot;&gt;Private endpoint&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/azure/private-link/private-link-service-overview&quot;&gt;Private link&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/learn/modules/connect-on-premises-network-with-vpn-gateway&quot;&gt;Łączenie sieci on-premises przez VPN Gateway&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/learn/modules/connect-on-premises-network-with-expressroute&quot;&gt;Łączenie sieci on-premises przez ExpressRoute&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-gb/learn/modules/secure-and-isolate-with-nsg-and-service-endpoints/&quot;&gt;NSG &amp;amp; Service Endpoint&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-gb/learn/modules/connect-on-premises-network-with-vpn-gateway/&quot;&gt;VPN Gateway + on-premises&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/azure/architecture/reference-architectures/hybrid-networking/hub-spoke&quot;&gt;Architektura Hub-spoke&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://azure.microsoft.com/en-us/pricing/details/private-link/&quot;&gt;Private Link pricing&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;egzaminy-microsoft&quot;&gt;Egzaminy Microsoft:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4wyqh&quot;&gt;Azure certifications&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE2PjDI&quot;&gt;Wszystkie certyfikaty z linkami&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;materiały-do-nauki&quot;&gt;Materiały do nauki:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/learn/&quot;&gt;Microsoft learn&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://events.microsoft.com/?timeperiod=next30Days&amp;amp;isSharedInLocalViewMode=true&amp;amp;country=Poland&amp;amp;language=English&quot;&gt;Eventy (też takie gdzie można dostać vouchery na egzaminy)&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://info.microsoft.com/CE-SCRTY-CATALOG-FY21-07Jul-29-WtorkizSecurity-SRDEM32279_CatalogDisplayPage.html&quot;&gt;Wtorki z security&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://info.microsoft.com/CE-AzureINFRA-CATALOG-FY20-04Apr-28-ThursdayswithAzure-SRDEM21201_CatalogDisplayPage.html&quot;&gt;Czwartki z Azure&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.pluralsight.com/partners/microsoft/azure&quot;&gt;Pluralsight + Azure&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/channel/UCdmEIMC3LBil4o0tjaTbj0w&quot;&gt;Kurs AZ-900 Adama (podstawy Azure)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>[&quot;aryll&quot;, &quot;maciejgos&quot;]</name></author><category term="Architecture Meetings" /><category term="Service endpoints" /><category term="Private endpoints" /><summary type="html">#azure-solutions-architect zabezpieczenie komunikacji pomiedzy on-prem a Azure</summary></entry><entry><title type="html">Tworzenie formularza typeform do głosowania bazującego na odpowiedziach udzielonych w ramach innego formularza</title><link href="https://azurecommunity.pl/blog/tworzenie-formularza-typeform-do-glosowania-bazujacego-na-odpowiedziach" rel="alternate" type="text/html" title="Tworzenie formularza typeform do głosowania bazującego na odpowiedziach udzielonych w ramach innego formularza" /><published>2020-09-15T00:00:00+02:00</published><updated>2020-09-15T00:00:00+02:00</updated><id>https://azurecommunity.pl/blog/tworzenie-formularza-typeform-do-glosowania-bazujacego-na-odpowiedziach</id><content type="html" xml:base="https://azurecommunity.pl/blog/tworzenie-formularza-typeform-do-glosowania-bazujacego-na-odpowiedziach">&lt;h2 id=&quot;w-tym-manualu-znajdziesz-informacje&quot;&gt;W tym manualu znajdziesz informacje&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;jak wykorzystać szablony Liquid w Logic App&lt;/li&gt;
+  &lt;li&gt;jak pobrać odpowiedzi udzielone do formularza typeform&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;trigger-http&quot;&gt;Trigger Http&lt;/h3&gt;
+
+&lt;p&gt;Tworzymy nowy Logic App z triggerem Http w którym oczekujemy na wejściu &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;formId&lt;/code&gt; formularza z którego będziemy pobierać odpowiedzi, tytuł nowego formularza oraz informacje umieszczane na pierwszym stronie formularza:&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;formId&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;gsmgXXSu&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Głosowanie na sesje na 42 spotkanie Microsoft Azure User Group Poland&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+	&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;welcome-screen-details&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Wybór należy do Ciebie!&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Głosowanie na sesje podczas 42 spotkania Microsoft Azure User Group Poland&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Data: 09 września od 18:00&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Miejsce: Online&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Treść tego jsona możemy wykorzstać to wygenerowania schematu oczekiwanego jsona dla triggera. Lub wykorzystać poniższy.&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;formId&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;string&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;string&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;welcome-screen-details&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;string&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;object&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;pobranie-odpowiedzi-z-formularza-typeform&quot;&gt;Pobranie odpowiedzi z formularza typeform&lt;/h3&gt;
+
+&lt;p&gt;Aby pobrać odpowiedzi z formularza należy wywołać zapytanie HTTP GET na adres  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://api.typeform.com/forms/&amp;lt;formId&amp;gt;/responses&lt;/code&gt; z wykorzystaniem zadania &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HTTP - Choose a REST API to invoke&lt;/code&gt; gdzie ustawiamy:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/images/posts/2020-09-15/typeform-logic-apps-read-responses.png&quot; alt=&quot;Konfiguracja zadania Logic Apps do odczytu wiadomości&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Method&lt;/code&gt; na &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GET&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;URI&lt;/code&gt; na &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://api.typeform.com/forms/&amp;lt;formId&amp;gt;/responses&lt;/code&gt; gdzie ‘formId` pobieramy z triggera&lt;/li&gt;
+  &lt;li&gt;nagłówek &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Authorization&lt;/code&gt; na &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Bearer &amp;lt;personal-token&amp;gt;&lt;/code&gt; - token musi mieć &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Read responses&lt;/code&gt; scope&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/images/posts/2020-09-15/typeform-toekn-read-responses-scope.png&quot; alt=&quot;Konfiguracja tokena do odczytu wiadomości&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ekstrakcja-danych-z-odpowiedzi&quot;&gt;Ekstrakcja danych z odpowiedzi&lt;/h3&gt;
+
+&lt;p&gt;W tym kroku wykorzystamy szablon &lt;a href=&quot;https://github.com/dotliquid/dotliquid&quot;&gt;Liquid&lt;/a&gt; aby wydzielić dane których potrzebujemy do zbudowania formularza dla głosowania. A są to:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;imię i nazwisko&lt;/li&gt;
+  &lt;li&gt;czas trwania sesji&lt;/li&gt;
+  &lt;li&gt;poziom sesji&lt;/li&gt;
+  &lt;li&gt;tytuł sesji&lt;/li&gt;
+  &lt;li&gt;opis sesji&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Aby wykorzystać szablon Liquid w Logic apps nalezy dodać dodać go do &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Integration Acount&lt;/code&gt;. Szczegółowy opis znajduje się &lt;a href=&quot;https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-enterprise-integration-liquid-transform#upload-the-template&quot;&gt;tutaj&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Kiedy szablon jest już wgrany sama konfiguracja zadania Liquid jest bardzo prosta. Z zadań Liquid wybieramy &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Tranform JSON to JSON&lt;/code&gt;a następnie wpisujemy jako Content body z zadania w którym pobraliśmy odpowiedzi, a jako Map wskazujemy wcześniej wgrany plik. Sam szablon wygląda następująco:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/images/posts/2020-09-15/logic-apps-liquid-actions.png&quot; alt=&quot;Wybór zadania Liquid&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'papers'&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/images/posts/2020-09-15/typeform-tranform-reposnes-into-json.png&quot; alt=&quot;Konfiguracja zadania pobierającego dane z odpowiedzi&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Pisząc szablon na względzie że w Logic Apps dane wejściowe trafiają do właściwości content i dlatego należy w szabloni użyć &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;content.items&lt;/code&gt; zamiast &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;items&lt;/code&gt;, co ma znaczenie prze debugowaniu szablonu lokalnie. Podanto w szablonie korzystam z apostrofu zamiast cudzysłowia, ponieważ w przypadku tego drugiego występuje błąd przy przetwarzaniu danych wejściowych jeśli w ich treści znajduje się cudzysłów.&lt;/p&gt;
+
+&lt;h3 id=&quot;budowa-treści-formularza-w-opraciu-o-dane-pozyskane-z-odpowiedzi&quot;&gt;Budowa treści formularza w opraciu o dane pozyskane z odpowiedzi&lt;/h3&gt;
+
+&lt;p&gt;W tym kroku również posłużymy się szablonem Liquid (zadanie &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Tranform JSON to JSON&lt;/code&gt;), tak więc podobnie jak wcześniej należy wgrać go przez &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Integration Account&lt;/code&gt;. W szablonie mapujemy każdy rekrod z kolekcji do indywidualnej strony na której wyświetlamy informacje o sesji, oraz do strony na której głosujemy na wybrane sesje.&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'fields':&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Za chwilę zapoznasz się z  opisami sesji, a następnie otrzymasz możliwość zagłosowania na dwie z nich.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ref&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;d37c0f54-2427-45c3-9da8-e1a682f0042e&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;button_text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Continue&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;hide_marks&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;statement&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'title':&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'Na&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;które&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;sesje&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;głosujesz?&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;MASZ&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;DWA&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;GŁOSY!'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'ref':&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'ccf&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3-0&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;fd&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6-497&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;-816&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;a-fee&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1542e35&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'properties':&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'description':&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'Wybierz&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;mądrze!'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'randomize':&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'allow_multiple_selection':&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'allow_other_choice':&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'vertical_alignment':&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'choices':&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            
+            &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`validations`:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`required`:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`min_selection`:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`max_selection`:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`type`:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;`multiple_choice`&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/images/posts/2020-09-15/typeform-tranform-json-into-form-body.png&quot; alt=&quot;Konfiguracja zadania tworzącego treść formularza&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;stworzenie-formularza&quot;&gt;Stworzenie formularza&lt;/h3&gt;
+
+&lt;p&gt;W ostatnim kroku tworzymy formularz wykorzystując wcześniej utworzony json:&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;fields&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;body('Vote_fields')&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;'fields'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;settings&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;are_uploads_public&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;is_public&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;is_trial&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;language&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;pl&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;meta&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;allow_indexing&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;progress_bar&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;proportion&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;show_progress_bar&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;show_typeform_branding&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;thankyou_screens&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;attachment&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;href&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://images.typeform.com/images/5wiGh2PYKXyW&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;image&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;button_mode&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;reload&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;button_text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;again&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;share_icons&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;show_button&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ref&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;c1ad6960-d547-48c2-91bc-ad2c97005bdb&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Dzięki!&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Do zobaczenia na spotkaniu!&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Przy okazji sprawdź nasze nowe miejsce do dyskusji zamiast grupy na FB 😎⬇️&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;[*https://github.com/AzureCommunityPL/group/discussions*](https://github.com/AzureCommunityPL/group/discussions)&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;share_icons&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;show_button&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ref&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;default_tys&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Udało się! Twoje informacje zostały przesłane.&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;theme&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;href&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://api.typeform.com/themes/qHWOQ7&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;@{triggerBody()?['title']}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;form&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;welcome_screens&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;attachment&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;href&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://images.typeform.com/images/8ZTgZWCqn7eA&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;image&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;button_text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Start&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;show_button&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ref&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;290bb413-4f1a-4dba-9d53-48e44ce76403&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;@{triggerBody()?['welcome-screen-details']}&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;workspace&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;href&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://api.typeform.com/workspaces/k9Jbqi&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;w body tym przekazujemy&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;pola utworzone w poprzednim kroku - &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;fields&quot;: @{body('Vote_fields')['fields']},&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;treść ekranu powidatlnego - ‘“title”: “@{triggerBody()?[‘welcome-screen-details’]}”’&lt;/li&gt;
+  &lt;li&gt;tytuł formularza - ‘“title”: “@{triggerBody()?[‘title’]}”,’&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Sam sposób tworzenia formularza znajduje się &lt;a href=&quot;create-form-in-typeform.md&quot;&gt;tutaj&lt;/a&gt;.&lt;/p&gt;</content><author><name>[&quot;kmadof&quot;]</name></author><category term="Examples" /><category term="Logic Apps" /><summary type="html">W tym manualu znajdziesz informacje jak wykorzystać szablony Liquid w Logic App jak pobrać odpowiedzi udzielone do formularza typeform Trigger Http Tworzymy nowy Logic App z triggerem Http w którym oczekujemy na wejściu formId formularza z którego będziemy pobierać odpowiedzi, tytuł nowego formularza oraz informacje umieszczane na pierwszym stronie formularza: { &quot;formId&quot;: &quot;gsmgXXSu&quot;, &quot;title&quot;: &quot;Głosowanie na sesje na 42 spotkanie Microsoft Azure User Group Poland&quot;, &quot;welcome-screen-details&quot;: &quot;Wybór należy do Ciebie!\nGłosowanie na sesje podczas 42 spotkania Microsoft Azure User Group Poland\n\nData: 09 września od 18:00\nMiejsce: Online&quot; } Treść tego jsona możemy wykorzstać to wygenerowania schematu oczekiwanego jsona dla triggera. Lub wykorzystać poniższy. { &quot;properties&quot;: { &quot;formId&quot;: { &quot;type&quot;: &quot;string&quot; }, &quot;title&quot;: { &quot;type&quot;: &quot;string&quot; }, &quot;welcome-screen-details&quot;: { &quot;type&quot;: &quot;string&quot; } }, &quot;type&quot;: &quot;object&quot; } Pobranie odpowiedzi z formularza typeform Aby pobrać odpowiedzi z formularza należy wywołać zapytanie HTTP GET na adres https://api.typeform.com/forms/&amp;lt;formId&amp;gt;/responses z wykorzystaniem zadania HTTP - Choose a REST API to invoke gdzie ustawiamy: Method na GET URI na https://api.typeform.com/forms/&amp;lt;formId&amp;gt;/responses gdzie ‘formId` pobieramy z triggera nagłówek Authorization na Bearer &amp;lt;personal-token&amp;gt; - token musi mieć Read responses scope Ekstrakcja danych z odpowiedzi W tym kroku wykorzystamy szablon Liquid aby wydzielić dane których potrzebujemy do zbudowania formularza dla głosowania. A są to: imię i nazwisko czas trwania sesji poziom sesji tytuł sesji opis sesji Aby wykorzystać szablon Liquid w Logic apps nalezy dodać dodać go do Integration Acount. Szczegółowy opis znajduje się tutaj. Kiedy szablon jest już wgrany sama konfiguracja zadania Liquid jest bardzo prosta. Z zadań Liquid wybieramy Tranform JSON to JSONa następnie wpisujemy jako Content body z zadania w którym pobraliśmy odpowiedzi, a jako Map wskazujemy wcześniej wgrany plik. Sam szablon wygląda następująco: { 'papers' : [ ] } Pisząc szablon na względzie że w Logic Apps dane wejściowe trafiają do właściwości content i dlatego należy w szabloni użyć content.items zamiast items, co ma znaczenie prze debugowaniu szablonu lokalnie. Podanto w szablonie korzystam z apostrofu zamiast cudzysłowia, ponieważ w przypadku tego drugiego występuje błąd przy przetwarzaniu danych wejściowych jeśli w ich treści znajduje się cudzysłów. Budowa treści formularza w opraciu o dane pozyskane z odpowiedzi W tym kroku również posłużymy się szablonem Liquid (zadanie Tranform JSON to JSON), tak więc podobnie jak wcześniej należy wgrać go przez Integration Account. W szablonie mapujemy każdy rekrod z kolekcji do indywidualnej strony na której wyświetlamy informacje o sesji, oraz do strony na której głosujemy na wybrane sesje. { { 'fields': [ { &quot;title&quot;: &quot;Za chwilę zapoznasz się z opisami sesji, a następnie otrzymasz możliwość zagłosowania na dwie z nich.&quot;, &quot;ref&quot;: &quot;d37c0f54-2427-45c3-9da8-e1a682f0042e&quot;, &quot;properties&quot;: { &quot;button_text&quot;: &quot;Continue&quot;, &quot;hide_marks&quot;: false }, &quot;type&quot;: &quot;statement&quot; }, { 'title': 'Na, które sesje głosujesz? MASZ DWA GŁOSY!', 'ref': 'ccf7d0a3-0fd6-497b-816a-fee1542e35b0', 'properties': { 'description': 'Wybierz mądrze!', 'randomize': true, 'allow_multiple_selection': true, 'allow_other_choice': false, 'vertical_alignment': true, 'choices': [ ] }, `validations`: { `required`: true, `min_selection`: 1, `max_selection`: 2 }, `type`: `multiple_choice` } ] } Stworzenie formularza W ostatnim kroku tworzymy formularz wykorzystując wcześniej utworzony json: { &quot;fields&quot;: @{body('Vote_fields')['fields']}, &quot;settings&quot;: { &quot;are_uploads_public&quot;: false, &quot;is_public&quot;: true, &quot;is_trial&quot;: false, &quot;language&quot;: &quot;pl&quot;, &quot;meta&quot;: { &quot;allow_indexing&quot;: false }, &quot;progress_bar&quot;: &quot;proportion&quot;, &quot;show_progress_bar&quot;: true, &quot;show_typeform_branding&quot;: true }, &quot;thankyou_screens&quot;: [ { &quot;attachment&quot;: { &quot;href&quot;: &quot;https://images.typeform.com/images/5wiGh2PYKXyW&quot;, &quot;properties&quot;: {}, &quot;type&quot;: &quot;image&quot; }, &quot;properties&quot;: { &quot;button_mode&quot;: &quot;reload&quot;, &quot;button_text&quot;: &quot;again&quot;, &quot;share_icons&quot;: false, &quot;show_button&quot;: false }, &quot;ref&quot;: &quot;c1ad6960-d547-48c2-91bc-ad2c97005bdb&quot;, &quot;title&quot;: &quot;Dzięki!\n\nDo zobaczenia na spotkaniu!\n\nPrzy okazji sprawdź nasze nowe miejsce do dyskusji zamiast grupy na FB 😎⬇️\n\n[*https://github.com/AzureCommunityPL/group/discussions*](https://github.com/AzureCommunityPL/group/discussions)&quot; }, { &quot;properties&quot;: { &quot;share_icons&quot;: false, &quot;show_button&quot;: false }, &quot;ref&quot;: &quot;default_tys&quot;, &quot;title&quot;: &quot;Udało się! Twoje informacje zostały przesłane.&quot; } ], &quot;theme&quot;: { &quot;href&quot;: &quot;https://api.typeform.com/themes/qHWOQ7&quot; }, &quot;title&quot;: &quot;@{triggerBody()?['title']}&quot;, &quot;type&quot;: &quot;form&quot;, &quot;welcome_screens&quot;: [ { &quot;attachment&quot;: { &quot;href&quot;: &quot;https://images.typeform.com/images/8ZTgZWCqn7eA&quot;, &quot;properties&quot;: {}, &quot;type&quot;: &quot;image&quot; }, &quot;properties&quot;: { &quot;button_text&quot;: &quot;Start&quot;, &quot;show_button&quot;: true }, &quot;ref&quot;: &quot;290bb413-4f1a-4dba-9d53-48e44ce76403&quot;, &quot;title&quot;: &quot;@{triggerBody()?['welcome-screen-details']}&quot; } ], &quot;workspace&quot;: { &quot;href&quot;: &quot;https://api.typeform.com/workspaces/k9Jbqi&quot; } } w body tym przekazujemy pola utworzone w poprzednim kroku - &quot;fields&quot;: @{body('Vote_fields')['fields']}, treść ekranu powidatlnego - ‘“title”: “@{triggerBody()?[‘welcome-screen-details’]}”’ tytuł formularza - ‘“title”: “@{triggerBody()?[‘title’]}”,’ Sam sposób tworzenia formularza znajduje się tutaj.</summary></entry><entry><title type="html">Tworzenie formularza typeform za pomocą Logic Apps</title><link href="https://azurecommunity.pl/blog/tworzenie-formularza-typeform-za-pomoca-logic-apps" rel="alternate" type="text/html" title="Tworzenie formularza typeform za pomocą Logic Apps" /><published>2020-08-26T00:00:00+02:00</published><updated>2020-08-26T00:00:00+02:00</updated><id>https://azurecommunity.pl/blog/tworzenie-formularza-typeform-za-pomoca-logic-apps</id><content type="html" xml:base="https://azurecommunity.pl/blog/tworzenie-formularza-typeform-za-pomoca-logic-apps">&lt;p&gt;Aby stworzyć formularz najpierw należy przygotować jego &lt;a href=&quot;https://developer.typeform.com/create/reference/create-form/&quot;&gt;definicję&lt;/a&gt; w postaci pliku json. Najprostszą metodą jest pobranie definicji istniejącego formularza wykonując zapytanie &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GET&lt;/code&gt; pod adres &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://api.typeform.com/forms/&amp;lt;formId&amp;gt;&lt;/code&gt; gdzie w miejscu &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;formId&amp;gt;&lt;/code&gt; należy podać identyfikator formularza. Z tak pobranej definicji usuwamy pola &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Kolejnym krokiem jest wygenerowanie tokena z poziomu konta użytkownika w zakładce &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Personal tokens&lt;/code&gt; umożliwiającego tworzenie formularzy:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/images/posts/2020-08-26/typeform-personal-token-create-form.png&quot; alt=&quot;Token z uprawnieniami do tworzenia formularzy&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Mając wykonane te czynności możemy przejść do częsci zasadniczej czyli wywołania &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HTTP POST&lt;/code&gt; na adres &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://api.typeform.com/forms&lt;/code&gt; z wykorzystaniem zadania &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;HTTP - Choose a REST API to invoke&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/images/posts/2020-08-26/typeform-logic-apps-http-action.png&quot; alt=&quot;Konfiguracja zadania w Log Apps&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Po wybraniu zadania ustawiamy:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Method&lt;/code&gt; na &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;POST&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;URI&lt;/code&gt; na &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://api.typeform.com/forms&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;nagłówek &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Authorization&lt;/code&gt; na &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Bearer &amp;lt;personal-token&amp;gt;&lt;/code&gt;,&lt;/li&gt;
+  &lt;li&gt;oraz body w którym umieszczamy wcześniej przygotowaną definicję formularza.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;../assets/images/posts/2020-08-26/typeform-logic-apps-action.png&quot; alt=&quot;Konfiguracja zadania w Log Apps&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Przykładowa definicja formularza CFP grupy wygląda następująca:&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;fields&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ref&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;0615d4db-3a69-4241-8df6-e19cf0f40d8f&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Imię i nazwisko&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;short_text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;validations&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;required&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Jak będziesz popisany&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ref&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;83537ee4-7fea-4a73-a74c-1971d20f6304&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Tagline(tytuł)&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;short_text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;validations&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;required&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ref&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;6ccc0676-af91-4dd7-8413-953c2a58d426&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Email&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;email&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;validations&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;required&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;default_country_code&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PL&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ref&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ae867632-2cb5-4ee8-ad85-a115f4b00f69&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Telefon kontaktowy&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;phone_number&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;validations&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;required&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ref&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;6eea5984-f273-4e8a-9164-825389cba877&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Bio&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;long_text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;validations&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;required&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ref&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;80d0695d-9b6b-4443-a1b2-10c4bc882c0b&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Twój LinkedIn&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;website&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;validations&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;required&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ref&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;551407f3-449b-4e89-85dd-a205e9bc62f5&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Twój Twitter&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;website&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;validations&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;required&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ref&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;5b82571a-0dbc-45b4-bbd0-75e9ef6acc28&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Inna Twoja strona&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;website&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;validations&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;required&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Jakby się dało, to w proporcjach 1:1 ;)&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ref&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;f72cf5e8-fa0a-41d6-a270-331956d43df7&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Zdjęcie profilowe&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;file_upload&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;validations&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;required&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ref&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;6de7c0f9-e951-45ba-98a2-fb9cec9848cf&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Tytuł sesji&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;short_text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;validations&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;required&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ref&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;3a5a2015-ef95-4f6b-9968-04b2e7fa9d47&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Krótki opis sesji&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;long_text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;validations&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;required&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;allow_multiple_selection&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;allow_other_choice&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;choices&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;label&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;15 min&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ref&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;d66f9c12-4474-421f-bdf0-79abed2a3fca&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;label&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;30 min&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ref&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;9cb59522-eacc-4441-b12b-2c646d4df67a&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;label&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;45 min&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ref&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;e2dd3bce-dbf8-455b-88dc-0a685274187e&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;label&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;60 min&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ref&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;c6c3fa55-ef07-40ee-bb68-01e5522c9e66&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;randomize&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;vertical_alignment&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ref&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;79983597-68cb-491b-87ba-c3277b93c284&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Długość sesji&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;multiple_choice&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;validations&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;required&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;allow_multiple_selection&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;allow_other_choice&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;choices&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;label&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;200&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ref&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;fa8745f1-1677-4c8a-b3a8-bd54d34f093d&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;label&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;300&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ref&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;3057b898-66db-4c39-9f0a-9e90da15ad81&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;label&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;400&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+            &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ref&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;5c8a8295-45ec-4f71-9001-b5d37ad8db34&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+          &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;- 200 - Intermediate material. Assumes 100-level knowledge and provides specific details about the topic.&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;- 300 - Advanced material. Assumes 200-level knowledge, in-depth understanding of features in a real-world environment, and strong coding skills. Provides a detailed technical overview of a subset of product/technology features, covering architecture, performance, migration, deployment, and development.&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;- 400 - Expert material. Assumes a deep level of technical knowledge and experience and a detailed, thorough understanding of topic. Provides expert-to-expert interaction and coverage of specialized topics.&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;randomize&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;vertical_alignment&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ref&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;10e2a2cf-28d0-4bec-84af-da5e9126ba15&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Poziom sesji&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;multiple_choice&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;validations&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;required&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;settings&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;are_uploads_public&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;is_public&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;is_trial&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;language&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;pl&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;meta&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;allow_indexing&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;progress_bar&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;proportion&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;show_progress_bar&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;show_typeform_branding&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;thankyou_screens&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;attachment&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;href&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://images.typeform.com/images/rwHFbTuxH9ne&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;image&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;button_mode&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;reload&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;button_text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;again&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;share_icons&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;show_button&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ref&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;103b1ee2-9f54-4bc8-b800-953c865f03e3&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Dzięki!&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\n&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;Na grupie odbędzie się głosowanie na sesje!&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;share_icons&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;show_button&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ref&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;default_tys&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Udało się! Twoje informacje zostały przesłane.&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;theme&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;href&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://api.typeform.com/themes/rqYVKG&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;@{triggerBody()?['title']}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;form&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;welcome_screens&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;properties&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;button_text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Start&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;show_button&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ref&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;1664a2c2-2674-4db9-8786-f48880e1cd9a&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;@{triggerBody()?['welcome-screen-details']}&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;workspace&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;href&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;https://api.typeform.com/workspaces/DEwVv8&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;W definicji tej znajdują się dwa parametry dynamicznie ustawiane po stronie Log Apps. Są to:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;title&quot;: &quot;@{triggerBody()?['title']}&quot;,&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;welcome_screens.title&quot;: &quot;@{triggerBody()?['welcome-screen-details']}&quot;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;których to wartości mogą wyglądać tak: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CFP - [ONLINE] 43 spotkanie Microsoft Azure User Group Poland&lt;/code&gt; i &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Zgłoszenia sesji na 43 spotkanie Microsoft Azure User Group Poland\n\nData: 09 października od 18:00\nMiejsce: Online&lt;/code&gt; odpowiednio, a są przekazywane jako parametry wywołania Logic Apps.&lt;/p&gt;</content><author><name>[&quot;kmadof&quot;]</name></author><category term="Examples" /><category term="Logic Apps" /><summary type="html">Aby stworzyć formularz najpierw należy przygotować jego definicję w postaci pliku json. Najprostszą metodą jest pobranie definicji istniejącego formularza wykonując zapytanie GET pod adres https://api.typeform.com/forms/&amp;lt;formId&amp;gt; gdzie w miejscu &amp;lt;formId&amp;gt; należy podać identyfikator formularza. Z tak pobranej definicji usuwamy pola id. Kolejnym krokiem jest wygenerowanie tokena z poziomu konta użytkownika w zakładce Personal tokens umożliwiającego tworzenie formularzy: Mając wykonane te czynności możemy przejść do częsci zasadniczej czyli wywołania HTTP POST na adres https://api.typeform.com/forms z wykorzystaniem zadania HTTP - Choose a REST API to invoke Po wybraniu zadania ustawiamy: Method na POST URI na https://api.typeform.com/forms nagłówek Authorization na Bearer &amp;lt;personal-token&amp;gt;, oraz body w którym umieszczamy wcześniej przygotowaną definicję formularza. Przykładowa definicja formularza CFP grupy wygląda następująca: { &quot;fields&quot;: [ { &quot;properties&quot;: {}, &quot;ref&quot;: &quot;0615d4db-3a69-4241-8df6-e19cf0f40d8f&quot;, &quot;title&quot;: &quot;Imię i nazwisko&quot;, &quot;type&quot;: &quot;short_text&quot;, &quot;validations&quot;: { &quot;required&quot;: true } }, { &quot;properties&quot;: { &quot;description&quot;: &quot;Jak będziesz popisany&quot; }, &quot;ref&quot;: &quot;83537ee4-7fea-4a73-a74c-1971d20f6304&quot;, &quot;title&quot;: &quot;Tagline(tytuł)&quot;, &quot;type&quot;: &quot;short_text&quot;, &quot;validations&quot;: { &quot;required&quot;: true } }, { &quot;properties&quot;: {}, &quot;ref&quot;: &quot;6ccc0676-af91-4dd7-8413-953c2a58d426&quot;, &quot;title&quot;: &quot;Email&quot;, &quot;type&quot;: &quot;email&quot;, &quot;validations&quot;: { &quot;required&quot;: true } }, { &quot;properties&quot;: { &quot;default_country_code&quot;: &quot;PL&quot; }, &quot;ref&quot;: &quot;ae867632-2cb5-4ee8-ad85-a115f4b00f69&quot;, &quot;title&quot;: &quot;Telefon kontaktowy&quot;, &quot;type&quot;: &quot;phone_number&quot;, &quot;validations&quot;: { &quot;required&quot;: true } }, { &quot;properties&quot;: {}, &quot;ref&quot;: &quot;6eea5984-f273-4e8a-9164-825389cba877&quot;, &quot;title&quot;: &quot;Bio&quot;, &quot;type&quot;: &quot;long_text&quot;, &quot;validations&quot;: { &quot;required&quot;: true } }, { &quot;properties&quot;: {}, &quot;ref&quot;: &quot;80d0695d-9b6b-4443-a1b2-10c4bc882c0b&quot;, &quot;title&quot;: &quot;Twój LinkedIn&quot;, &quot;type&quot;: &quot;website&quot;, &quot;validations&quot;: { &quot;required&quot;: false } }, { &quot;properties&quot;: {}, &quot;ref&quot;: &quot;551407f3-449b-4e89-85dd-a205e9bc62f5&quot;, &quot;title&quot;: &quot;Twój Twitter&quot;, &quot;type&quot;: &quot;website&quot;, &quot;validations&quot;: { &quot;required&quot;: false } }, { &quot;properties&quot;: {}, &quot;ref&quot;: &quot;5b82571a-0dbc-45b4-bbd0-75e9ef6acc28&quot;, &quot;title&quot;: &quot;Inna Twoja strona&quot;, &quot;type&quot;: &quot;website&quot;, &quot;validations&quot;: { &quot;required&quot;: false } }, { &quot;properties&quot;: { &quot;description&quot;: &quot;Jakby się dało, to w proporcjach 1:1 ;)&quot; }, &quot;ref&quot;: &quot;f72cf5e8-fa0a-41d6-a270-331956d43df7&quot;, &quot;title&quot;: &quot;Zdjęcie profilowe&quot;, &quot;type&quot;: &quot;file_upload&quot;, &quot;validations&quot;: { &quot;required&quot;: true } }, { &quot;properties&quot;: {}, &quot;ref&quot;: &quot;6de7c0f9-e951-45ba-98a2-fb9cec9848cf&quot;, &quot;title&quot;: &quot;Tytuł sesji&quot;, &quot;type&quot;: &quot;short_text&quot;, &quot;validations&quot;: { &quot;required&quot;: true } }, { &quot;properties&quot;: {}, &quot;ref&quot;: &quot;3a5a2015-ef95-4f6b-9968-04b2e7fa9d47&quot;, &quot;title&quot;: &quot;Krótki opis sesji&quot;, &quot;type&quot;: &quot;long_text&quot;, &quot;validations&quot;: { &quot;required&quot;: true } }, { &quot;properties&quot;: { &quot;allow_multiple_selection&quot;: false, &quot;allow_other_choice&quot;: false, &quot;choices&quot;: [ { &quot;label&quot;: &quot;15 min&quot;, &quot;ref&quot;: &quot;d66f9c12-4474-421f-bdf0-79abed2a3fca&quot; }, { &quot;label&quot;: &quot;30 min&quot;, &quot;ref&quot;: &quot;9cb59522-eacc-4441-b12b-2c646d4df67a&quot; }, { &quot;label&quot;: &quot;45 min&quot;, &quot;ref&quot;: &quot;e2dd3bce-dbf8-455b-88dc-0a685274187e&quot; }, { &quot;label&quot;: &quot;60 min&quot;, &quot;ref&quot;: &quot;c6c3fa55-ef07-40ee-bb68-01e5522c9e66&quot; } ], &quot;randomize&quot;: false, &quot;vertical_alignment&quot;: true }, &quot;ref&quot;: &quot;79983597-68cb-491b-87ba-c3277b93c284&quot;, &quot;title&quot;: &quot;Długość sesji&quot;, &quot;type&quot;: &quot;multiple_choice&quot;, &quot;validations&quot;: { &quot;required&quot;: true } }, { &quot;properties&quot;: { &quot;allow_multiple_selection&quot;: false, &quot;allow_other_choice&quot;: false, &quot;choices&quot;: [ { &quot;label&quot;: &quot;200&quot;, &quot;ref&quot;: &quot;fa8745f1-1677-4c8a-b3a8-bd54d34f093d&quot; }, { &quot;label&quot;: &quot;300&quot;, &quot;ref&quot;: &quot;3057b898-66db-4c39-9f0a-9e90da15ad81&quot; }, { &quot;label&quot;: &quot;400&quot;, &quot;ref&quot;: &quot;5c8a8295-45ec-4f71-9001-b5d37ad8db34&quot; } ], &quot;description&quot;: &quot;- 200 - Intermediate material. Assumes 100-level knowledge and provides specific details about the topic.\n\n- 300 - Advanced material. Assumes 200-level knowledge, in-depth understanding of features in a real-world environment, and strong coding skills. Provides a detailed technical overview of a subset of product/technology features, covering architecture, performance, migration, deployment, and development.\n\n- 400 - Expert material. Assumes a deep level of technical knowledge and experience and a detailed, thorough understanding of topic. Provides expert-to-expert interaction and coverage of specialized topics.&quot;, &quot;randomize&quot;: false, &quot;vertical_alignment&quot;: true }, &quot;ref&quot;: &quot;10e2a2cf-28d0-4bec-84af-da5e9126ba15&quot;, &quot;title&quot;: &quot;Poziom sesji&quot;, &quot;type&quot;: &quot;multiple_choice&quot;, &quot;validations&quot;: { &quot;required&quot;: true } } ], &quot;settings&quot;: { &quot;are_uploads_public&quot;: false, &quot;is_public&quot;: true, &quot;is_trial&quot;: false, &quot;language&quot;: &quot;pl&quot;, &quot;meta&quot;: { &quot;allow_indexing&quot;: false }, &quot;progress_bar&quot;: &quot;proportion&quot;, &quot;show_progress_bar&quot;: true, &quot;show_typeform_branding&quot;: true }, &quot;thankyou_screens&quot;: [ { &quot;attachment&quot;: { &quot;href&quot;: &quot;https://images.typeform.com/images/rwHFbTuxH9ne&quot;, &quot;properties&quot;: {}, &quot;type&quot;: &quot;image&quot; }, &quot;properties&quot;: { &quot;button_mode&quot;: &quot;reload&quot;, &quot;button_text&quot;: &quot;again&quot;, &quot;share_icons&quot;: false, &quot;show_button&quot;: false }, &quot;ref&quot;: &quot;103b1ee2-9f54-4bc8-b800-953c865f03e3&quot;, &quot;title&quot;: &quot;Dzięki!\n\nNa grupie odbędzie się głosowanie na sesje!&quot; }, { &quot;properties&quot;: { &quot;share_icons&quot;: false, &quot;show_button&quot;: false }, &quot;ref&quot;: &quot;default_tys&quot;, &quot;title&quot;: &quot;Udało się! Twoje informacje zostały przesłane.&quot; } ], &quot;theme&quot;: { &quot;href&quot;: &quot;https://api.typeform.com/themes/rqYVKG&quot; }, &quot;title&quot;: &quot;@{triggerBody()?['title']}&quot;, &quot;type&quot;: &quot;form&quot;, &quot;welcome_screens&quot;: [ { &quot;properties&quot;: { &quot;button_text&quot;: &quot;Start&quot;, &quot;show_button&quot;: true }, &quot;ref&quot;: &quot;1664a2c2-2674-4db9-8786-f48880e1cd9a&quot;, &quot;title&quot;: &quot;@{triggerBody()?['welcome-screen-details']}&quot; } ], &quot;workspace&quot;: { &quot;href&quot;: &quot;https://api.typeform.com/workspaces/DEwVv8&quot; } } W definicji tej znajdują się dwa parametry dynamicznie ustawiane po stronie Log Apps. Są to: &quot;title&quot;: &quot;@{triggerBody()?['title']}&quot;, &quot;welcome_screens.title&quot;: &quot;@{triggerBody()?['welcome-screen-details']}&quot; których to wartości mogą wyglądać tak: CFP - [ONLINE] 43 spotkanie Microsoft Azure User Group Poland i Zgłoszenia sesji na 43 spotkanie Microsoft Azure User Group Poland\n\nData: 09 października od 18:00\nMiejsce: Online odpowiednio, a są przekazywane jako parametry wywołania Logic Apps.</summary></entry><entry><title type="html">#azure-solutions-architect Przegląd zaproponowanych rozwiązań</title><link href="https://azurecommunity.pl/blog/azure-solutions-architect-qa-review-session" rel="alternate" type="text/html" title="#azure-solutions-architect Przegląd zaproponowanych rozwiązań" /><published>2020-07-02T00:00:00+02:00</published><updated>2020-07-02T00:00:00+02:00</updated><id>https://azurecommunity.pl/blog/azure-solutions-architect-qa-review-session</id><content type="html" xml:base="https://azurecommunity.pl/blog/azure-solutions-architect-qa-review-session">&lt;p&gt;&lt;a href=&quot;https://evt.mx/KuVfnCVp&quot;&gt;Add to calendar&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://teams.microsoft.com/l/meetup-join/19%3ameeting_MGNjMTU5MTktN2QxMi00YTRhLThkYmUtYzZkZTM0MGUyYjY5%40thread.v2/0?context=%7b%22Tid%22%3a%22cc58971a-0481-4ec0-bf8d-bb2e265db003%22%2c%22Oid%22%3a%22f907c950-2a9a-4012-b163-af67be63b5d6%22%7d&quot;&gt;Meeting link&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://youtu.be/2H8VoSQAw1c&quot;&gt;Recording&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;agenda&quot;&gt;Agenda&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Review przygotowany rozwiązań.&lt;/li&gt;
+  &lt;li&gt;Jak przygotowany projekt przełożyć na stawiane przez biznes SLA.&lt;/li&gt;
+  &lt;li&gt;Jak dobrze przełożyć &lt;a href=&quot;https://docs.microsoft.com/en-us/azure/architecture/framework/resiliency/overview&quot;&gt;Overview of the reliability pillar&lt;/a&gt; na nasz projekt architektury?&lt;/li&gt;
+  &lt;li&gt;Q&amp;amp;A.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;discussion&quot;&gt;Discussion&lt;/h2&gt;
+
+&lt;h3 id=&quot;review-projektu-architektury&quot;&gt;Review projektu architektury&lt;/h3&gt;
+
+&lt;p&gt;Zadanie dla was to zaprojektować usługę, do której będą trafiać zdjęcia współdzielone przez kilka systemów.&lt;/p&gt;
+
+&lt;p&gt;Założenia:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Usługa wspólna dla innych systemów&lt;/li&gt;
+  &lt;li&gt;Usługa musi być redundantna pomiędzy regionami (najlepiej active-active)&lt;/li&gt;
+  &lt;li&gt;Zawartość zdjęcia musi być automatycznie tagowana/opisywana&lt;/li&gt;
+  &lt;li&gt;Usługa musi pozwalać na wgranie i pobranie bezpośrednio zdjęć (najlepiej 2 – 3 call rest z perspektywy aplikacji klienckiej)&lt;/li&gt;
+  &lt;li&gt;Usługa musi puszczać notyfikację, że nowe zdjęcie zostało wgrane, jest otagowane itp.&lt;/li&gt;
+  &lt;li&gt;Jeśli coś będzie nie tak z zawartością zdjęcia (zwartość +18) powinna iść notyfikacja do działu prawnego/ compliance&lt;/li&gt;
+  &lt;li&gt;Usługa musi umożliwiać na wyszukanie wszystkich zdjęć po użytkowniku, systemie, tagach, w zakresie czasu&lt;/li&gt;
+  &lt;li&gt;Jeśli mam ID zdjęcia to api musi zwracać url z bezpośrednim dostępem do zdjęcia&lt;/li&gt;
+  &lt;li&gt;Skala to 100k zdjęć miesięcznie zapisywanych, odczyt 2M razy, średni rozmiar 1 mb&lt;/li&gt;
+  &lt;li&gt;Zdjęcie jest czytane najczęściej przez pierwsze 45 dni&lt;/li&gt;
+  &lt;li&gt;Ile będzie kosztować system na przestrzeni 1, 12 i 24 miesięcy?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;poglądowy-schemat-architektury&quot;&gt;Poglądowy schemat architektury:&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/images/posts/2020-07-02/architektura02072020.jpg&quot; alt=&quot;Schemat architektury&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;opis&quot;&gt;Opis&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Azure Blob Storage&lt;/code&gt; geo-redundant
+    &lt;ul&gt;
+      &lt;li&gt;pozwala automatycznie zreplikować dane do drugiego regionu&lt;/li&gt;
+      &lt;li&gt;może odczytywać z zapasowego storage&lt;/li&gt;
+      &lt;li&gt;dzięki drugiemu kontu storage’owemu możemy replikować się w drugą stronę (do drugiego regionu)&lt;/li&gt;
+      &lt;li&gt;przenoszenie danych po 45 do cold storage dzięki &lt;a href=&quot;https://docs.microsoft.com/en-us/azure/storage/blobs/storage-lifecycle-management-concepts?tabs=azure-portal&quot;&gt;retention policy&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/azure/storage/common/storage-disaster-recovery-guidance&quot;&gt;wysoka dostępność&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;replikacja asynchroniczna (do 15 min zanim plik będzie w drugim regionie)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Na wejściu do systemu i rozdzielania requestów między regionami &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Azure Traffic Manager&lt;/code&gt; lub &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Azure Front Door&lt;/code&gt; (dużo usług w Azure zbudowane jest na Traffic Managerze)&lt;/li&gt;
+  &lt;li&gt;Pierwszym komponentem jest &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Azure Functions&lt;/code&gt; lub &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Azure API Management&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;płacimy tylko za requesty&lt;/li&gt;
+      &lt;li&gt;uzyskujemy klucz dostępowy do uploadu pliku (user dostaje SAS token i bezpośrednio uploaduje plik do storage)&lt;/li&gt;
+      &lt;li&gt;zapisujemy request upload’u w CosmosDB&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;CosmosDb&lt;/code&gt; przechowuje informacje o uploadowanych plikach
+    &lt;ul&gt;
+      &lt;li&gt;CosmosDB w trybie multi-master&lt;/li&gt;
+      &lt;li&gt;dokument zawiera Id, User, System, Tagi, Storage name, Storage region&lt;/li&gt;
+      &lt;li&gt;Tagi są tablicą i dzięki temu możemy użyć &lt;a href=&quot;https://docs.microsoft.com/en-us/azure/cosmos-db/index-overview&quot;&gt;range index lub ARRAY_CONTAINS&lt;/a&gt; do przeszukiwania&lt;/li&gt;
+      &lt;li&gt;Storage name, Storage region służą do uzyskania wysokiej dostępności (uzyskanie SAS tokena do pliku w storage read-access)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Blob storage produkuje event do &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Event Grid&lt;/code&gt; po zuploadowaniu pliku. Wykorzystujemy event w trzech Azure Functions:
+    &lt;ul&gt;
+      &lt;li&gt;pierwsza AF updatuje CosmosDb informacją, że plik został zapisany&lt;/li&gt;
+      &lt;li&gt;druga AF pobiera tagi z &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Cognitive Services&lt;/code&gt; i zapisuje je do CosmosDb&lt;/li&gt;
+      &lt;li&gt;trzecia AF sprawdza plik przez &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Content Moderator&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Zalety architektury: można napisać w tydzień i puścić na produkcję
+Wady architektury: regiony są sparowane - żeby nie być zmuszonym do parowania regionów trzeba napisać kod do replikacji na event gridze lub azure function&lt;/p&gt;
+
+&lt;h3 id=&quot;qa&quot;&gt;Q&amp;amp;A&lt;/h3&gt;
+
+&lt;p&gt;1.Czy CosmosDb może zabić kosztami?&lt;/p&gt;
+
+&lt;p&gt;CosmosDb karze głupotę. Sprawdza się przy średnich i dużych rozwiązaniach (np. replikacja danych między regionami)
+Żeby wyliczyć dla zaprojektowanej architektury koszty CosmosDb:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;100tys nowych rekordów x 4 akcje (stworzenie rekordu, update że plik został wgrany, Cognitive Services, Content Moderator)&lt;/li&gt;
+  &lt;li&gt;Łukasz stworzył przykładowego JSONa żeby sprawdzić jego wielkość&lt;/li&gt;
+  &lt;li&gt;wykorzystaliśmy &lt;a href=&quot;https://cosmos.azure.com/capacitycalculator/&quot;&gt;kalkulator&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;2.Różnice między Service Bus, Event Grid, Event Hub&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Event Grid to usługa działająca na Webhookach (rzecz integracyjna dla Azure)&lt;/li&gt;
+  &lt;li&gt;Service Bus to Publisher-Subscriber (zapewnia większość wzorców kolejkowych i można użyć MassTransit jako warstwę abstrakcji)&lt;/li&gt;
+  &lt;li&gt;Event Hub to usługa do streamingu eventów&lt;/li&gt;
+  &lt;li&gt;są jeszcze Queue Storage&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;3.SLA&lt;/p&gt;
+
+&lt;p&gt;Dobrze zdefiniowane SLA mówi że jestem w stanie przetworzyć jakiś proces. Wartość SLA powinna zostać ustalona z biznesem, innymi słowy należy ustalić jak długa przerwa w działaniu aplikacji/systemu jest dopuszczalna.&lt;/p&gt;
+
+&lt;p&gt;Jeśli mamy dwie zależne od siebie usługi to mnożymy ich avaiability. Dla dwóch regionów korzystamy z &lt;a href=&quot;https://devops.stackexchange.com/questions/711/how-do-you-calculate-the-compound-service-level-agreement-sla-for-cloud-servic&quot;&gt;rachunku prawdopodobieństwa i matematyki dyskretnej&lt;/a&gt;&lt;/p&gt;</content><author><name>[&quot;kaluzaaa&quot;]</name></author><category term="Architecture Meetings" /><category term="Review sessions" /><summary type="html">Add to calendar</summary></entry><entry><title type="html">Analiza stosu technologicznego aplikacji obsługującej Program Mentoringowy.</title><link href="https://azurecommunity.pl/blog/azure-solutions-architect-program-mentoringowy" rel="alternate" type="text/html" title="Analiza stosu technologicznego aplikacji obsługującej Program Mentoringowy." /><published>2020-06-18T00:00:00+02:00</published><updated>2020-06-18T00:00:00+02:00</updated><id>https://azurecommunity.pl/blog/azure-solutions-architect-program-mentoringowy</id><content type="html" xml:base="https://azurecommunity.pl/blog/azure-solutions-architect-program-mentoringowy">&lt;h1 id=&quot;azure-solutions-architect-mentoring-tech-stack&quot;&gt;#azure-solutions-architect Mentoring tech stack&lt;/h1&gt;
+
+&lt;p&gt;Date: 2020-06-18&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://evt.mx/uUMzNr9T&quot;&gt;Add to calendar&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://teams.microsoft.com/l/meetup-join/19%3ameeting_MjhiZmE3ZjEtMDliNy00OTQwLTg5ZmMtYTQ2NDhlMzJhMTkw%40thread.v2/0?context=%7b%22Tid%22%3a%22cc58971a-0481-4ec0-bf8d-bb2e265db003%22%2c%22Oid%22%3a%22f907c950-2a9a-4012-b163-af67be63b5d6%22%7d&quot;&gt;Meeting link&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=ydag3Z4oWk0&quot;&gt;Recording&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;agenda&quot;&gt;Agenda&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Analiza stosu technologicznego aplikacji obsługującej Program Mentoringowy.&lt;/li&gt;
+  &lt;li&gt;Q&amp;amp;A.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;discussion&quot;&gt;Discussion&lt;/h1&gt;
+
+&lt;h2 id=&quot;analiza-stosu-technologicznego-aplikacji-obsługującej-program-mentoringowy&quot;&gt;Analiza stosu technologicznego aplikacji obsługującej Program Mentoringowy.&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Stos mentoringowy
+    &lt;ul&gt;
+      &lt;li&gt;Quick and dirty, w niektórych miejscach good enough, w niektórych bardzo dirty ;)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Strona
+    &lt;ul&gt;
+      &lt;li&gt;Fork &lt;a href=&quot;https://github.com/xriley/DevConf-Theme&quot;&gt;DevConf-Theme&lt;/a&gt;
+        &lt;ul&gt;
+          &lt;li&gt;Miał jedną wadę, był całkowicie statyczny.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Przerzucono go na &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;, a całość hostowano na &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;.&lt;/li&gt;
+      &lt;li&gt;Dane na strone, np. lista mentorów były generowane z listy w YAML przez Jekyll.&lt;/li&gt;
+      &lt;li&gt;Aplikowanie ze strony - przez Microsoft Forms
+        &lt;ul&gt;
+          &lt;li&gt;Przy takich szybkich rozwiązania dobrze korzystać z gotowców.&lt;/li&gt;
+          &lt;li&gt;Forms miał tylko zbierać dane, ale nie miał być docelowym miejscem gdzie miały być one przechowywane.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Logic App
+    &lt;ul&gt;
+      &lt;li&gt;Na każde zgłoszenie odpalała się Logic Apka&lt;/li&gt;
+      &lt;li&gt;Dodawała dane do MailerLite, żeby potem wysyłać emailing do uczestników.&lt;/li&gt;
+      &lt;li&gt;Klucz wyciągała z Key Vault
+        &lt;ul&gt;
+          &lt;li&gt;Zrobione ręcznie przez HTTP Request z MSI Logic App, bo Logic App nie ma dobrej integracji z KV używając MSI.&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Kroku, gdzie wyciągany jest klucz do MailerLite, skonfigurowany jest w taki sposób, że dane wrażliwe nie są pokazywane w logach.&lt;/li&gt;
+      &lt;li&gt;Do Forms nie ma porządnego API.&lt;/li&gt;
+      &lt;li&gt;Następnie było tworzone Issue na GitHub z danymi z formularza.&lt;/li&gt;
+      &lt;li&gt;Potem Issue było przypisywane do tworzonej karty w projekcie.&lt;/li&gt;
+      &lt;li&gt;Dalej zgłoszenie było zapisywane do Table na Azure Storage.&lt;/li&gt;
+      &lt;li&gt;Przy tej ilości zgłoszeń API GH było bardzo wolne, dlatego też te zgłoszenia trafiały do Table.&lt;/li&gt;
+      &lt;li&gt;Dalej poprzez przenoszenie kart w projekcie na GitHub wstępnie sortowano uczestników, którzy mieli być przekazani mentorom. Były zdefiniowane odpowiednie tagi i proces.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Kod
+    &lt;ul&gt;
+      &lt;li&gt;W Pythonie, napisane quick and dirty, bo po prostu miało działać :)&lt;/li&gt;
+      &lt;li&gt;Jeżeli któraś karta w projekcie na GitHub miała +4, to leciała już do mentora.&lt;/li&gt;
+      &lt;li&gt;Dla każdej karty jak wyżej robiono request do API GitHub żeby wyciągnąć karty z +4 i zapisywano w odpowiedniej tabeli na Storage, gdzie był tylko partition key i row key.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Strona dla mentorów
+    &lt;ul&gt;
+      &lt;li&gt;Kolejna &lt;a href=&quot;https://github.com/AzureCommunityPL/azurecommunitypl.github.io/blob/master/mentoring.html&quot;&gt;prosta stronka&lt;/a&gt; w czystym JSie.&lt;/li&gt;
+      &lt;li&gt;Pod spodem Function App, która po uwierzytelnieniu się kluczem (każdy mentor miał swój klucz), pokazywała kandydatów dla niego.&lt;/li&gt;
+      &lt;li&gt;Mentor był jako partition key, żeby można było wyciągnąć całego mentora w jednym zapytaniu.&lt;/li&gt;
+      &lt;li&gt;Kiedy mentor wybrał swoich podopiecznych, to było wykonywane zapytanie, które zapisywało wybranych do odpowiedniej tabeli na Storage.&lt;/li&gt;
+      &lt;li&gt;Przy okazji była wysyłana wiadomość na Slacka przez kolejkę.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Po wybraniu
+    &lt;ul&gt;
+      &lt;li&gt;Kiedy kandydat był jako wybrany, to odpowiednim zapytaniem był przesuwany z +4 na Selected w projekcie na GitHub.&lt;/li&gt;
+      &lt;li&gt;Aktualizowanie danych na MailerLite&lt;/li&gt;
+      &lt;li&gt;Analogicznie dla mastermind - wszyscy z +4 i +3 - odpowiedni update w MailerLite.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;qa&quot;&gt;Q&amp;amp;A&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Coś byś zmienił?
+    &lt;ul&gt;
+      &lt;li&gt;Przerzucić na darmowe CosmosDB, żeby nie latać po tylu tabelach.&lt;/li&gt;
+      &lt;li&gt;Sprzątanie przy dostępie danych dla mentora - ładniejsze załadowanie i przechowanie struktury z ACL&lt;/li&gt;
+      &lt;li&gt;Link z dostępem i kluczem ważnym np. godzinę.&lt;/li&gt;
+      &lt;li&gt;W niektórych miejscach bardziej zdarzeniowo.&lt;/li&gt;
+      &lt;li&gt;Mógłby być kawałek panelu administracyjnego, żeby np. jak mentor chciał jeszcze raz wybrać, to żeby nie czyścić ręcznie tego z palca.&lt;/li&gt;
+      &lt;li&gt;Poprawienie UX aplikacji.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Jak pracować z LogicApp w wiele osób - branche itd.
+    &lt;ul&gt;
+      &lt;li&gt;Niedługo będzie można pisać &lt;a href=&quot;https://github.com/Azure/logicapps/tree/master/preview&quot;&gt;kod do LogicApp w C#&lt;/a&gt;!&lt;/li&gt;
+      &lt;li&gt;Do merge conflict dochodzi, kiedy scope zadań się przecinają - może trzeba tutaj zobaczyć co tu nie działa? Albo pull requesty za długo leżą.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Application Gateway Ingress Controller
+    &lt;ul&gt;
+      &lt;li&gt;Jest w preview, ma parę raków pod spodem, nieprodukcyjnie, dopóki nie będzie GA (support). Ma słabszą konfigurację niż NGINX Ingress Controller albo Traefik.&lt;/li&gt;
+      &lt;li&gt;Najlepiej zwykły, klasyczny Ingress Controller NGINX. Ewentualnie Traefik.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>[&quot;kaluzaaa&quot;]</name></author><category term="Architecture Meetings" /><category term="Review sessions" /><summary type="html">#azure-solutions-architect Mentoring tech stack</summary></entry><entry><title type="html">Azure Solutions Architect Q&amp;amp;A</title><link href="https://azurecommunity.pl/blog/azure-solutions-architect-qa" rel="alternate" type="text/html" title="Azure Solutions Architect Q&amp;amp;A" /><published>2020-06-04T00:00:00+02:00</published><updated>2020-06-04T00:00:00+02:00</updated><id>https://azurecommunity.pl/blog/azure-solutions-architect-qa</id><content type="html" xml:base="https://azurecommunity.pl/blog/azure-solutions-architect-qa">&lt;h1 id=&quot;azure-solutions-architect-qa-1&quot;&gt;#azure-solutions-architect Q&amp;amp;A #1&lt;/h1&gt;
+
+&lt;p&gt;Date: 2020-06-04&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://evt.mx/Rm12eTAB&quot;&gt;Add to calendar&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZWYyNTg3N2UtZjA4NC00ZTQ1LTljMzQtODhmZTA0MTI0YzUz%40thread.v2/0?context=%7b%22Tid%22%3a%22cc58971a-0481-4ec0-bf8d-bb2e265db003%22%2c%22Oid%22%3a%22f907c950-2a9a-4012-b163-af67be63b5d6%22%7d&quot;&gt;Meeting link&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://youtu.be/PwWhQFa8Ekg&quot;&gt;Recording&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;agenda&quot;&gt;Agenda&lt;/h1&gt;
+
+&lt;p&gt;Proponowane wątki:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Praktyczne podejście do adresacji sieci w większej skali:
+    &lt;ul&gt;
+      &lt;li&gt;Czy stosuje się w praktyce mniejsze podsieci niż VNET /16 i Subnet /24&lt;/li&gt;
+      &lt;li&gt;Adresować inaczej niż od 10.0.0.0? Łatwo o nachodzenie przy spinaniu z kimś, jednak stosnkowo łatwiej niż w on-prem o readresację&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Mozna jakoś oskryptować stworzenie Organizacji DevOps albo tenanta B2C? Głebiej już się coś daje, a ich (chyba) nie&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Ile jest pisania kodu w pracy Solution Architect, a ile klepania YAML np. pod AKS?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Jakaś dobra praktyka kiedy już nie rozpatrywać smaego ACI i pora przejść na AKS?
+Wybór między SF, SF Mesh, AKS dla super prostego mikroserwisu&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Jak praktycznie zacząć projektowanie rozwiązania w Azure (dokumentacja, wybór usług, PoC)?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Jak podejść do tematu architektury dla startupu, który nie wiadomo jak pójdzie i nie do konca da się przewidzieć które funkcjonalności będą kluczowe (= nie mamy liczb, ale zazwyczaj mamy mało hajsu i malo czasu)?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Jaką przyjąc strategię dla serwisów multinenant: kontrola podziału na poziomie bazy danych, tworzenie osobnych kopii serwisu per tenant , inne ?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;discussion&quot;&gt;Discussion&lt;/h1&gt;
+
+&lt;h2 id=&quot;1-praktyczne-podejście-do-adresacji-sieci-w-większej-skali&quot;&gt;1. Praktyczne podejście do adresacji sieci w większej skali:&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;W przypadku rozwiązania bez przewidywanych interakcji z innymi sieciami bez znaczenia&lt;/li&gt;
+  &lt;li&gt;W przypadku koniecznych interakcji: decyzja administratorów sieci&lt;/li&gt;
+  &lt;li&gt;Bywają przypadki, gdzie VNet musiał być większy niż /16&lt;/li&gt;
+  &lt;li&gt;Konieczne jest nauczenie się korzystania z notacji &lt;a href=&quot;https://pl.wikipedia.org/wiki/Classless_Inter-Domain_Routing&quot;&gt;CIDR&lt;/a&gt;
+Kalkulatory podsieci:
+http://42.pl/
+http://www.subnet-calculator.com/&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;2-czy-można-oskryptować-tworzenie-organizacji-devops-lub-tenanta-b2c&quot;&gt;2. Czy można oskryptować tworzenie Organizacji DevOps lub tenanta B2C&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Nie ma takiej potrzeby ze względu, że to pojedyńcze elementy, których się nie powiela&lt;/li&gt;
+  &lt;li&gt;Możliwość bezpośredniego utworzenia nowego tenanta AzureAD bez potrzeby autoryzacji i podpinania karty: https://account.azure.com/organization&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-charakterystyka-pracy-solution-architecta&quot;&gt;3. Charakterystyka pracy Solution Architecta&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Stosunkowo mało pracy z kodem&lt;/li&gt;
+  &lt;li&gt;Większość pracy na etapie tworzenia środowisk i migracji&lt;/li&gt;
+  &lt;li&gt;Tylko 10-20% to praca na środowiskach produkcyjnych - raczej tylko w przypadku dużych problemów&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Najistotniejsze aspekty, o które należy zadbać:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Uśrednianie projektu do poziomu zespołu tworzącego i utrzymującego&lt;/li&gt;
+  &lt;li&gt;Budowanie zastępowalności poprzez przekazywanie wiedzy&lt;/li&gt;
+  &lt;li&gt;Umiejętność przekazywanie do analizy poszczególnych aspektów rozwiązania innym&lt;/li&gt;
+  &lt;li&gt;Rozwijanie umiejętności miękkich&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/KISS_principle&quot;&gt;KISS&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Occam%27s_razor&quot;&gt;Occam’s Razor&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;4-jakaś-dobra-praktyka-kiedy-już-nie-rozpatrywać-smaego-aci-i-pora-przejść-na-aks-wybór-między-sf-sf-mesh-aks-dla-super-prostego-mikroserwisu&quot;&gt;4. Jakaś dobra praktyka kiedy już nie rozpatrywać smaego ACI i pora przejść na AKS? Wybór między SF, SF Mesh, AKS dla super prostego mikroserwisu&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Jak coś super prostego to po prostu Azure Functions albo AppService (łatwy Continuous Deployment, masa języków programowania, taniość)&lt;/li&gt;
+  &lt;li&gt;ACI i AppService’y otrzymają sporo nowych funkcjonalności od strony sieci rozwiązujących wcześniejsze problemy z łącznością prywatną&lt;/li&gt;
+  &lt;li&gt;Service Fabric jest cudowny, jednak ma wysoki próg wejścia by wykorzystać pełnię możliwości - konieczny C# i architektura systemów rozproszonych&lt;/li&gt;
+  &lt;li&gt;AKS wymaga pilnowania bezstanowości service’ów i minimalizacja użytych elementów (branie gotowych od dostawcy)&lt;/li&gt;
+  &lt;li&gt;Kluczowe jest nie nastawianie się na konkretną technologię, tylko problemy jakie należy rozwiązać - niekoniecznie mikroserwisy są lepsze od monolitu. Na przykładzie &lt;a href=&quot;https://www.youtube.com/watch?v=b2F-DItXtZs&quot;&gt;MongoDB&lt;/a&gt; i &lt;a href=&quot;https://i.redd.it/8v9fopt6wlx31.jpg&quot;&gt;Dilberta&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;5-jak-praktycznie-zacząć-projektowanie-rozwiązania-w-azure-dokumentacja-wybór-usług-poc&quot;&gt;5. Jak praktycznie zacząć projektowanie rozwiązania w Azure (dokumentacja, wybór usług, PoC)?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Zacząć od porzadnego rozpoznania wymagań, ale z naciskiem na kontekst biznesowy a nie techniczny&lt;/li&gt;
+  &lt;li&gt;Jeśli nie jest wymagany multicloud/agnostyczność to optymalizować pod Azure (prościej przepisać w razie potrzeby zmiany niż utrzymywać neutralność kosztem optymalizacji)&lt;/li&gt;
+  &lt;li&gt;Jeśli jest wymagana przenośność to najprościej IaaS&lt;/li&gt;
+  &lt;li&gt;Uwzględniać w projekcie permanentny stan awarii (tworzyć pętle reconnect itd.)&lt;/li&gt;
+  &lt;li&gt;VM w Azure są droższe tylko na pierwszy rzut oka, jednak po uwzględnieniu wszystkiego co daje Public Cloud jest on tańszy (wiele replik danych, self-healing, disaster recovery, network, security). TCO chmury powinno być korzystniejsze niż on-prem.&lt;/li&gt;
+  &lt;li&gt;Korzystanie na produkcji z funkcjonalności, a tym bardziej usług w Preview niewskazanane, chyba, że jesteśmy w stanie uzyskać wsparcie produkcyjne - zawsze najbezpieczniej trzymać się sprawdzonych wersji.&lt;/li&gt;
+  &lt;li&gt;Optymalizować koszty, chyba że możemy je uzasadnić i wybronić chociażby mniejszym obciążeniem administracyjnym&lt;/li&gt;
+  &lt;li&gt;Pamiętanie o backupach (i odtwarzaniu), compliance i security&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=1CSeY10zbqo&quot;&gt;Jim Keller: Most People Don’t Think Simple Enough&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;6-jak-podejść-do-tematu-architektury-dla-startupu-który-nie-wiadomo-jak-pójdzie-i-nie-do-konca-da-się-przewidzieć-które-funkcjonalności-będą-kluczowe--nie-mamy-liczb-ale-zazwyczaj-mamy-mało-hajsu-i-malo-czasu&quot;&gt;6. Jak podejść do tematu architektury dla startupu, który nie wiadomo jak pójdzie i nie do konca da się przewidzieć które funkcjonalności będą kluczowe (= nie mamy liczb, ale zazwyczaj mamy mało hajsu i malo czasu)?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Najlepiej zacząć tanio/prosto od Azure Functions (lub AppService), Service Bus (jeśli potrzebny), jakiś Storage i najtańszy SQL odpowiednio izolowany. jak wypali to potem najwyżej przepisać&lt;/li&gt;
+  &lt;li&gt;Mentoring stał na GitHub Pages (static + JS), Azure Functions (Python) podpietym do Azure Storage Tables&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;7-jaką-przyjąc-strategię-dla-serwisów-multinenant-b2b-kontrola-podziału-na-poziomie-bazy-danych-tworzenie-osobnych-kopii-serwisu-per-tenant--inne-&quot;&gt;7. Jaką przyjąc strategię dla serwisów multinenant B2B: kontrola podziału na poziomie bazy danych, tworzenie osobnych kopii serwisu per tenant , inne ?&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Separacja storage (osobne konta) i DB (SQL Elastic Pool, &lt;a href=&quot;https://github.com/citusdata/citus&quot;&gt;Citus&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;Appy wspólne (żeby nie zabić rentowności), ale dbając o odpowiednią uwagę na przepływ wrazliwych danych pod kątem compliance&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;8-opinie-na-temat-azure-ad-b2c&quot;&gt;8. Opinie na temat Azure AD B2C&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Dobre pod kątem compliance i dostepnych providerów w porównaniu do realizowania tego samodzielnie&lt;/li&gt;
+  &lt;li&gt;Im bardziej Business tym przyjemniej, im bardziej Customer tym zdarzają się konieczne rzeźby&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;links&quot;&gt;Links&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=1CSeY10zbqo&quot;&gt;Most People Don’t Think Simple Enough&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.microsoft.com/en-us/azure/virtual-machines/classic-vm-deprecation&quot;&gt;Migrate your IaaS resources to Azure Resource Manager by March 1, 2023&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=b2F-DItXtZs&amp;amp;feature=youtu.be&quot;&gt;Episode 1 - Mongo DB Is Web Scale&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Occam%27s_razor&quot;&gt;Occam’s razor&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/KISS_principle&quot;&gt;KISS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://account.azure.com/organization&quot;&gt;Nie do końca udokomentowane zakładanie nowego AAD bez konta w Azure&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>[&quot;kaluzaaa&quot;]</name></author><category term="Architecture Meetings" /><category term="Q&amp;A" /><summary type="html">#azure-solutions-architect Q&amp;amp;A #1</summary></entry></feed>
